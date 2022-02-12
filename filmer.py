@@ -95,7 +95,7 @@ for i, texte_cru in enumerate(list_texte_cru):
         texte2_tts = texte2_tts + '아'
 
     ecrire_en_image(i, texte1, texte2)
-    faire_audio(texte1, texte2)
+    faire_audio(texte1_tts, texte2_tts)
 
     time.sleep(0.5)
     ajouter_image_statique_a_audio(
