@@ -1,27 +1,28 @@
-# 영상 단어장 자동화 스크립트
+# Le script de l'automatisation filmant une liste de vocabulaire
 -----------------------
-유튜브 등지를 둘러다니다 보면 단어암기를 돕는 많은 영상들을 볼 수 있습니다. 이런 영상들은 대개 형식은 장시간 유지된 채 내용만 바뀌는 식으로 제작되는데, 이를 일일이 타이핑하거나 tts를 녹음하여 수작업으로 영상을 제작한다고 하면 굉장히 수고스러운 일일 것입니다. 이 레포지토리에서는 노가다성 영상 제작에 들어가는 수고를 덜 수 있는 간단한 솔루션을 제공합니다.
+Quand vous vous promenez sur Youtube, vous pouvez voir beaucoup de vidéos qui vous aident d'apprendre par coeur des vocabulaires. Pour la plupart, cettes mêmes vidéos sont produites de la manière selon laquelle seul son contenu varie sous la même forme avec long temps, mais ce sera trop fatigant si vous travaillez sur une vidéo en tapant un par un ou enregistrant TTS à votre main. Ainsi, ce repositoire fournit la solution simple qui soulage votre fatigue qui résulte d'une production de vidéo qui nécessite de pas mal de travails.
 
-## 필요 라이브러리
-다음 라이브러리를 pip를 통해 설치해주세요.
+## Les bibliothèques requises
+Veuillez s'installer aux bibliothèques suivantes au travers de pip.
 * pip install pillow (PIL)
 * pip install moviepy
 * pip install gtts
 * pip install pydub
 
-## 파라미터
-콘솔에 다음의 간단한 파라미터만 넣어주면 자동으로 영상을 제작할 수 있습니다.
-> filmer.py (langue_departure) (filepath_wordlist) (filepath_photo)
+## Paramètres
+C'est simple. Il suffit de mettre les variables suivantes en console pour produire une vidéo.
+> filmer.py (langue_du_départ) (chemin_de_fichier_de_vocabulaires) (chemin_de_fichier_de_photo)
 
-#### langue_departure
-출발언어
-예) fr, en, de ...
-#### filepath_wordlist
-단어리스트의 파일경로. 토큰은 '|'로 구분되고 좌항은 단어, 우항은 그 단어의 의미입니다. 현재 출발언어는 프랑스어, 도착언어는 한국어에 최적화되어 있습니다. (사용자가 메모장으로 손수 제작할 수도 있겠으나 저 같은 경우에는 'Quizlet'에서 단어장을 만들고 그곳에서 Export하는 방식을 사용합니다.)
-예) words.txt
-#### filepath_photo
-영상 백그라운드의 파일경로. 세로 사진의 경우 단어 길이에 따라 짤릴 수 있으므로 조정이 필요합니다.
-예) photo.png
+#### langue_du_départ
+ex. fr, en, de ...
+#### chemin_de_fichier_de_vocabulaires
+Le délimiteur est 'I'. La gauche est un terme et le droit est sa signification. À présent, c'est optimisé que la langue du départ est français et celle de l'arrivée est coréen. (C'est ma propre manière d'utiliser Quizlet et d'y exporter des vocabulaires.)
+
+ex. words.txt
+#### chemin_de_fichier_de_photo
+Background. Utilisez black.png en dossier. C'est à la fois simple et efficace.
+
+ex. photo.png
 
 ----------------------------
-###### 이외에 폰트나 폰트 크기 같은 경우 직접 스트립트를 수정하여 커스터마이징하실 수 있습니다.
+*Vous pouvez à part customiser le font ou sa taille en révisant directement le script.*
