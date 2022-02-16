@@ -1,7 +1,6 @@
 import os
 import time
 import sys
-import re
 
 from PIL import Image
 from PIL import ImageFont
@@ -23,9 +22,17 @@ def remplacer(_texte,  _stopwords : list):
     return _texte
 
 def effacer_parentheses(_texte):
-    _texte = re.sub(r'\([^)]*\)', '', _texte)
-    _texte = re.sub(r'\[[^)]*\]', '', _texte)
-    return _texte
+    str = ''
+    b = True
+    for i in range(len(_texte)):
+        if _texte[i] == '(' or _texte[i] == '[':
+            b = False
+        if _texte[i] == ')' or _texte[i] == ']':
+            b = True
+            continue
+        if b:
+            str += _texte[i]
+    return str
 
 CHEMIN_TMP = "tmp/"
 LANGUE_DEPARTURE = sys.argv[1]
